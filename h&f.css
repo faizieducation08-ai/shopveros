@@ -1,0 +1,110 @@
+
+
+/* Navbar */
+
+
+.logo-round{
+    border-radius: 50%;
+    
+    padding: 0px;
+}
+.navbar-brand{
+    color: white;
+    font-weight:500;
+    opacity: 60%;
+    font-family: 'Times New Roman', Times, serif;
+}
+.navbar-nav .nav-link{
+    color:white;
+    font-weight:500;
+    margin:0 10px;
+    position:relative;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover{
+    color:#FF2E93;
+}
+
+.navbar-nav .nav-link::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:linear-gradient(90deg,#FF9A00,#FF2E93,#D61FFF);
+    transition:.4s;
+}
+
+.navbar-nav .nav-link:hover::after{
+    width:100%;
+}
+
+
+
+.btn{
+    color: hotpink;
+    border-color: hotpink;
+}
+
+.btn:hover{
+    /* background-color: hotpink; */
+    color: hotpink;
+    /* border-color: hotpink; */
+    border-color:#D61FFF;
+    box-shadow:0 0 10px #FF2E93;
+}
+
+
+/* Footer */
+.custom-footer{
+        background: linear-gradient(135deg, #0b0f1a, #151c30, #ba0968);
+    color: #fff;
+}
+
+/* Title */
+.footer-title{
+    color: hotpink;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Text */
+.footer-text{
+    color: #ccc;
+}
+
+/* Headings */
+.footer-heading{
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Links */
+.footer-links{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li{
+    margin: 8px 0;
+}
+
+.footer-links a{
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover{
+    color: hotpink;
+    padding-left: 6px;
+}
+
+/* Bottom bar */
+.footer-bottom{
+    background: linear-gradient(135deg, #0b0f1a, #151c30, #ff1493);
+    color: #888;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}

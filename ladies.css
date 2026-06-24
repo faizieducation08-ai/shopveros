@@ -1,0 +1,229 @@
+/* =========================
+   GLOBAL THEME
+========================= */
+body{
+    background:#0a0f1f;
+    color:white;
+    font-family: 'Segoe UI', sans-serif;
+}
+/* =========================
+   HEADINGS / MARQUEE
+========================= */
+.product1{
+    text-align:center;
+    padding:40px 0;
+}
+
+.product1 h1{
+    font-size: 50px;
+    font-weight: 900;
+    background: linear-gradient(90deg,#ff4da6,#7c3aed,#06b6d4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.product1 h4{
+    color:#94a3b8;
+}
+
+marquee{
+    color:#ff4da6;
+    font-weight:bold;
+    font-size:30px;
+   background-color: aqua;
+   
+}
+
+/* =========================
+   PRODUCT CARDS (LUXURY)
+========================= */
+.card{
+    background: linear-gradient(135deg,#111827,#0f172a);
+    border:2px solid hotpink;
+    border-radius:18px;
+    overflow:hidden;
+    transition:0.4s;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+    transform:translateY(10px);
+    box-shadow:0 0 25px rgba(255,77,166,0.25);
+}
+
+.card-img-top{
+    transition:0.5s;
+}
+
+
+/* =========================
+   BUTTON (DETAIL)
+========================= */
+.btn{
+    background: linear-gradient(135deg,#ff4da6,#7c3aed);
+    color:white;
+    border:none;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:600;
+    transition:0.3s;
+    width:100%;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px rgba(255,77,166,0.4);
+}
+
+/* =========================
+   SECTION SPACING
+========================= */
+.container{
+    margin-bottom:40px;
+}
+/* =========================
+   GLOW EFFECT BACKGROUND TOUCH
+========================= */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: radial-gradient(circle at top left, rgba(255,77,166,0.08), transparent 40%),
+                radial-gradient(circle at bottom right, rgba(124,58,237,0.08), transparent 40%);
+    z-index:-1;
+}
+ .ai-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #11162a;
+    color: white;
+    border-radius: 50%;
+    border: 1px solid hotpink;
+    text-align: center;
+    line-height: 60px;
+    font-size: 28px;
+    text-decoration: none;
+    opacity: 90%;
+    z-index: 9999;
+  }
+
+  /* =====================
+   RESPONSIVE DESIGN
+===================== */
+
+.card{
+    width: 100% !important;
+    margin-bottom: 20px;
+}
+
+.card img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.row{
+    row-gap: 20px;
+}
+
+/* Tablet */
+@media (max-width: 992px){
+
+    .product1 h1{
+        font-size: 40px;
+    }
+
+    .product1 h4{
+        font-size: 18px;
+    }
+
+    .card{
+        width: 100% !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+
+    .product1{
+        padding: 40px 15px;
+        text-align: center;
+    }
+
+    .product1 h1{
+        font-size: 30px;
+    }
+
+    .product1 h4{
+        font-size: 16px;
+    }
+
+    .col-md-4{
+        margin-bottom: 20px;
+    }
+
+    .card{
+        width: 100% !important;
+    }
+
+    .card img{
+        height: 250px !important;
+    }
+
+    marquee{
+        font-size: 22px;
+        padding: 10px;
+    }
+
+    .footer-title{
+        font-size: 28px;
+    }
+
+    .footer-heading{
+        margin-top: 20px;
+    }
+
+    .footer-links{
+        padding-left: 0;
+        list-style: none;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px){
+
+    .navbar-brand{
+        font-size: 18px;
+    }
+
+    .logo-round{
+        width: 35px;
+        height: 35px;
+    }
+
+    .product1 h1{
+        font-size: 24px;
+    }
+
+    .product1 h4{
+        font-size: 14px;
+    }
+
+    .card img{
+        height: 220px !important;
+    }
+
+    marquee{
+        font-size: 18px;
+    }
+
+    .footer-bottom{
+        font-size: 12px;
+    }
+}

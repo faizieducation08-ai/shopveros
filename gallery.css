@@ -1,0 +1,196 @@
+/* =========================
+   GLOBAL THEME
+========================= */
+body{
+    background:#0a0f1f;
+    color:white;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+
+.gallery-hero{
+    padding:80px 0 40px 0;
+    background:#090317;
+    text-align:center;
+}
+
+/* MAIN TITLE */
+.hero-title{
+    font-size:3.5rem;
+    font-weight:900;
+    background: linear-gradient(90deg,#ff4da6,#7c3aed,#06b6d4);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+    letter-spacing:2px;
+}
+
+/* SUBTITLE */
+.hero-subtitle{
+    color:#94a3b8;
+    font-size:18px;
+    margin-top:10px;
+}
+
+/* SMALL ANIMATION */
+.hero-title{
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow{
+    0%{
+        text-shadow:0 0 10px rgba(255,77,166,0.2);
+    }
+    100%{
+        text-shadow:0 0 25px rgba(124,58,237,0.4);
+    }
+}
+ .ai-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #11162a;
+    color: white;
+    border-radius: 50%;
+    border: 1px solid hotpink;
+    text-align: center;
+    line-height: 60px;
+    font-size: 28px;
+    text-decoration: none;
+    opacity: 90%;
+    z-index: 9999;
+  }
+  .gallery-card{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.gallery-card img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s ease;
+}
+
+/* First Image */
+.front{
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+/* Second Image */
+.back{
+    opacity: 0;
+    transform: rotate(360deg);
+}
+
+/* Hover Effect */
+.gallery-card:hover .front{
+    opacity: 0;
+    transform: rotate(-360deg);
+}
+
+.gallery-card:hover .back{
+    opacity: 1;
+    transform: rotate(0deg);
+}
+  /* =========================
+   GALLERY RESPONSIVE
+========================= */
+
+
+/* Tablet */
+@media (max-width: 992px){
+
+    .hero-title{
+        font-size: 40px;
+    }
+
+    .hero-subtitle{
+        font-size: 18px;
+    }
+
+    .gallery-card{
+        height: 300px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+
+    .hero-title{
+        font-size: 32px;
+    }
+
+    .hero-subtitle{
+        font-size: 16px;
+    }
+
+    .gallery-card{
+        height: 280px;
+        margin-bottom: 25px;
+    }
+
+    .row{
+        row-gap: 20px;
+    }
+
+    .footer-title{
+        font-size: 26px;
+    }
+
+    .footer-links{
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .footer-heading{
+        margin-top: 20px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 576px){
+
+    .navbar-brand{
+        font-size: 18px;
+    }
+
+    .logo-round{
+        width: 35px;
+        height: 35px;
+    }
+
+    .hero-title{
+        font-size: 26px;
+    }
+
+    .hero-subtitle{
+        font-size: 14px;
+    }
+
+    .gallery-card{
+        height: 240px;
+    }
+
+    .footer-bottom{
+        font-size: 12px;
+    }
+
+    .ai-icon{
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+        right: 15px;
+        bottom: 15px;
+    }
+}

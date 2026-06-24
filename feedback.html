@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feedback</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="h&f.css">
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- JQuery CDN  -->
+  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js" type="text/javascript"></script>
+</head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="images/logo.png" alt="Logo" width="40" height="40" class="me-2 logo-round">
+      SHOPVEROS
+    </a>
+
+    <!-- Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+     <!-- Links -->
+      <div class="navbar-nav ms-auto">
+          <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="shop.html">Deals</a>
+        <a class="nav-link" href="men.html">Men's</a>
+        <a class="nav-link" href="ladies.html">Ladie's</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="contact.html">Contact Us</a>
+         <a class="nav-link" href="feedback.html">Feedback</a>
+        <a class="nav-link" href="cart.html">🛒</a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+<a href="ai-chat.html" class="ai-icon">🤖</a>
+
+
+<!-- HERO -->
+<section class="feedback-hero">
+  <div class="container text-center">
+    <h1 class="feedback-title">We Value Your Feedback</h1>
+    <p class="feedback-subtitle">Help us improve your shopping experience</p>
+  </div>
+</section>
+
+<!-- Feedback Form By Using CSS Inline  -->
+    <div class="container"
+      style="background-color: #090317; border: 3px solid hotpink; width: 500px; text-align: justify; height:auto; padding: 30px; color: white; border-style: double;">
+      <div class="star-rating">
+        <h2 style="color: #e779b6; text-align: center;">Share Your Experience</h2><br>
+        <form action="message.html">
+          <label for="">Name</label> <br>
+          <input type="text" placeholder="Your Name" required>
+          <br><br>
+
+          <label for="">Email</label><br>
+          <input type="email" placeholder="Your Email" required>
+          <br><br>
+
+          <label for="">FeedBack</label><br>
+          <select name="Feedback" id="">
+            <option value="">Menz Wear</option>
+            <option value="">Ladies Wear</option>
+          </select>
+          <br><br>
+
+          <label for="">Your Comment</label> <br>
+          <!-- <input type="text" placeholder="Your Comment"> -->
+          <textarea name="Feedback" id="text" placeholder="Your comment" required></textarea>
+          <br><br>
+
+          <!-- 5 Star Rating  -->
+          <label for="">Rating</label><br>
+          <div class="fivestar" aria-required="true">
+            <i class="fa-solid fa-star" id="star-1"></i><i class="fa-solid fa-star" id="star-2"></i><i
+              class="fa-solid fa-star" id="star-3"></i><i class="fa-solid fa-star" id="star-4"></i><i
+              class="fa-solid fa-star" id="star-5"></i>
+          </div>
+
+          <br>
+          <div><input type="submit" class="sub"></div>
+        </form>
+        
+      </div>
+    </div>
+    <br>
+
+    <!-- ================= PURE CSS REVIEWS SLIDER ================= -->
+<div class="container my-5">
+  <h2 class="text-center review-title"> Customer Reviews</h2>
+
+  <div class="css-slider">
+
+    <div class="slide s1">
+      <p>“Amazing quality products! Fast delivery and great service 👍”</p>
+      <h5>— Ayesha Khan</h5>
+    </div>
+
+    <div class="slide s2">
+      <p>“Best online shopping experience. Highly recommended 👌”</p>
+      <h5>— Ahmed Raza</h5>
+    </div>
+
+    <div class="slide s3">
+      <p>“Products are original and affordable. Love it 💯”</p>
+      <h5>— Fatima Noor</h5>
+    </div>
+
+  </div>
+</div>
+   
+    <!-- jquery For 5 star Rating-->
+   <script>
+$(document).ready(function () {
+
+  $('.fa-star').click(function () {
+
+    let id = $(this).attr('id').split('-')[1];
+
+    // reset all stars
+    $('.fa-star').css("color", "#444");
+
+    // fill stars up to clicked one
+    for (let i = 1; i <= id; i++) {
+      $('#star-' + i).css("color", "#FF69B4");
+    }
+
+  });
+
+});
+</script>
+
+<!-- Footer -->
+ <footer class="custom-footer text-center text-md-start">
+
+  <div class="container p-5">
+    <div class="row">
+
+      <!-- About -->
+      <div class="col-lg-6 col-md-12 mb-4">
+        <h4 class="footer-title">SHOPVEROS</h4>
+        <p class="footer-text">
+          Shopveros is a modern online shopping store for trendy fashion and everyday essentials.
+It offers a fast, easy, and smooth shopping experience with quality products.
+Shopveros keeps you stylish with the latest trends at great prices.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <!-- <li><a href="#">Categories</a></li> -->
+          <li><a href="shop.html">Deals</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-heading">Support</h5>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- <li><a href="#">Privacy Policy</a></li> -->
+          <li><a href="ai-chat.html">Chat with AI</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom text-center p-3">
+    © 2026 SHOPVEROS | Created By Faizan & Asma
+  </div>
+
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+  </body>
+</html>

@@ -1,0 +1,91 @@
+/* ================= CART PAGE STYLE ================= */
+
+body{
+  background: linear-gradient(365deg, #232526, #414345);
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Cart Header */
+.cart-header{
+background:#0a0f1f;
+    padding: 40px 0px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: blue;
+}
+
+
+.cart-title{
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cart-subtitle{
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Cart Cards */
+.card{
+  background:#0a0f1f;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.card h5{
+  font-weight: 700;
+  color: hotpink;
+}
+
+.card p{
+  margin-bottom: 8px;
+  color: white;
+  font-weight: 500
+  font-size: 15px;
+}
+
+/* Remove Button */
+.btn-danger{
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 8px 18px;
+  width: fit-content;
+}
+
+.btn-danger:hover{
+  transform: scale(1.05);
+}
+
+/* Total Section */
+#total{
+  background: #0d6efd;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a0f1f;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-bottom: 40px;
+}
+
+/* Empty Cart */
+.empty-cart{
+  background: white;
+  text-align: center;
+  padding: 40px;
+  border-radius: 15px;
+  color: #666;
+  font-size: 20px;
+  font-weight: 600;
+}
