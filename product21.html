@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="h&f.css">
+    <link rel="stylesheet" href="products.css">
+</head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="images/logo.png" alt="Logo" width="40" height="40" class="me-2 logo-round">
+      SHOPVEROS
+    </a>
+
+    <!-- Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      <!-- Links -->
+      <div class="navbar-nav ms-auto">
+         <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="shop.html">Deals</a>
+        <a class="nav-link" href="men.html">Men's</a>
+        <a class="nav-link" href="ladies.html">Ladie's</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="contact.html">Contact Us</a>
+          <a class="nav-link" href="feedback.html">Feedback</a>
+        <a class="nav-link" href="cart.html">🛒</a>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- PRODUCT -->
+<div class="container">
+
+  <div class="row product-box">
+
+    <div class="col-md-6 text-center">
+      <img src="images/swatch3.jpg.jpeg" class="product-img" id="img">
+    </div>
+
+    <div class="col-md-6">
+
+      <div class="product-id">ID: SV-043</div>
+
+      <h2 id="name">Smart Watch</h2>
+
+      <h3>1 Years Warranty</h3>
+
+      <p>Best Smart watch for men in white color with luxury Display.</p>
+      <div class="price">Original Price <span id="price">1999</span></div>
+      <!-- OFFER -->
+      <span class="badge bg-danger">Up to 50% OFF</span>
+      
+      <div class="price">Rs. <span id="price">1499</span></div>
+
+      <div class="btn-box">
+
+        <button class="btn btn-cart" onclick="addToCart()">Add To Cart</button>
+
+        <button class="btn btn-order" onclick="openForm()">Order Now</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- CUSTOMER FORM -->
+<div id="orderFormBox" style="display:none;">
+
+  <div class="form-container">
+
+    <h3>Customer Details</h3>
+
+    <input type="text" id="cname" placeholder="Your Name">
+    <input type="text" id="cphone" placeholder="Phone Number">
+    <textarea id="caddress" placeholder="Address"></textarea>
+
+    <button class="btn btn-success" onclick="sendOrder()">
+      Confirm Order
+    </button>
+
+    <button class="btn btn-danger" onclick="closeForm()">
+      Cancel
+    </button>
+
+  </div>
+
+</div>
+<script>
+
+let product = {
+  id: "SV-043",
+  name: document.getElementById("name").innerText,
+  price: document.getElementById("price").innerText,
+  img: document.getElementById("img").src
+};
+
+// CART
+function addToCart() {
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  let product = {
+    id: document.getElementById("name").innerText,
+    name: document.getElementById("name").innerText,
+    price: parseInt(document.getElementById("price").innerText),
+    qty: 1
+  };
+
+  // check if already exists
+  let existing = cart.find(item => item.id === product.id);
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push(product);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert("🛒 Product added to cart!");
+}
+
+
+// OPEN FORM
+function openForm() {
+  document.getElementById("orderFormBox").style.display = "block";
+}
+
+// CLOSE FORM
+function closeForm() {
+  document.getElementById("orderFormBox").style.display = "none";
+}
+
+// WHATSAPP ORDER
+function sendOrder() {
+
+  let name = document.getElementById("cname").value;
+  let phoneUser = document.getElementById("cphone").value;
+  let address = document.getElementById("caddress").value;
+
+  if (name === "" || phoneUser === "" || address === "") {
+    alert("Please fill all fields!");
+    return;
+  }
+
+  let myPhone = "923701337673";
+
+  let message =
+    "⌚ NEW ORDER\n\n" +
+    "Product ID: " + product.id + "\n" +
+    "Name: " + product.name + "\n" +
+    "Price: " + product.price + "\n" +
+    "Offer: Up to 50% OFF\n\n" +
+   "👤 Customer Details:\n" +
+    "Name: " + name + "\n" +
+    "Phone: " + phoneUser + "\n" +
+    "Address: " + address;
+
+  window.open(
+    "https://wa.me/" + myPhone + "?text=" + encodeURIComponent(message),
+    "_blank"
+  );
+
+  closeForm();
+}
+
+</script>
+<br>
+<!-- Footer -->
+ <footer class="custom-footer text-center text-md-start">
+
+  <div class="container p-5">
+    <div class="row">
+
+      <!-- About -->
+      <div class="col-lg-6 col-md-12 mb-4">
+        <h4 class="footer-title">SHOPVEROS</h4>
+        <p class="footer-text">
+          Shopveros is a modern online shopping store for trendy fashion and everyday essentials.
+It offers a fast, easy, and smooth shopping experience with quality products.
+Shopveros keeps you stylish with the latest trends at great prices.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <!-- <li><a href="#">Categories</a></li> -->
+          <li><a href="shop.html">Deals</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-heading">Support</h5>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About</a></li>
+          <!-- <li><a href="#">Privacy Policy</a></li> -->
+          <li><a href="ai-chat.html">Chat with AI</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom text-center p-3">
+    © 2026 SHOPVEROS | Created By Faizan & Asma
+  </div>
+
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  
+
+  </body>
+</html>
